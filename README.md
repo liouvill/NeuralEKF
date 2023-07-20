@@ -1,7 +1,7 @@
 # Neural Extended Kalman Filters (Neural EKF)
  
 This repository contains codes and data for the following publication:
-* Wei Liu, Zhilu Lai, Kiran Bacsa, and Eleni Chatzi (2022). [Neural Extended Kalman Filters for Learning and Predicting Dynamics of Structural Systems](https://arxiv.org/abs/2210.04165).
+* Wei Liu, Zhilu Lai, Kiran Bacsa, and Eleni Chatzi (2023). [Neural extended Kalman filters for learning and predicting dynamics of structural systems](https://doi.org/10.1177/14759217231179912). *Structural Health Monitoring*.
 
 The Neural EKF is a generalized version of the conventional EKF, where the modeling of process dynamics and sensory observations can be parameterized by neural networks, therefore learned by end-to-end training. The method is implemented under the variational inference framework with the EKF conducting inference from sensing measurements.
 
@@ -23,10 +23,12 @@ The Neural EKF is a generalized version of the conventional EKF, where the model
 ## Citation
 Please cite the following paper if you find the work relevant and useful in your research:
 ```
-@article{liu2022neural,
-  title={Neural Extended Kalman Filters for Learning and Predicting Dynamics of Structural Systems},
-  author={Liu, Wei and Lai, Zhilu and Bacsa, Kiran and Chatzi, Eleni},
-  journal={arXiv preprint arXiv:2210.04165},
-  year={2022}
+@article{doi:10.1177/14759217231179912,
+author = {Wei Liu and Zhilu Lai and Kiran Bacsa and Eleni Chatzi},
+title ={Neural extended Kalman filters for learning and predicting dynamics of structural systems},
+journal = {Structural Health Monitoring},
+pages = {14759217231179912},
+year = {2023},
+doi = {10.1177/14759217231179912}
 }
 ```
