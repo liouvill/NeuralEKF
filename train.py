@@ -17,7 +17,7 @@ pdb_safety_net()
 
 
 # Configure hyper parameters
-hyperparameter_defaults = dict(batch_size=100, learning_rate=1e-3, epochs=500, latent_dim=16)
+hyperparameter_defaults = dict(batch_size=200, learning_rate=3e-3, epochs=100000, latent_dim=4)
 
 HyperParameterConfig = namedtuple(
     "HyperParameterConfig", list(hyperparameter_defaults.keys())
@@ -25,8 +25,8 @@ HyperParameterConfig = namedtuple(
 hy_config = HyperParameterConfig(**hyperparameter_defaults)
 
 dataset_config = OfflineDatasetConfig(
-    traj_len=21,
-    num_viz_trajectories=5,
+    traj_len=51,
+    num_viz_trajectories=1,
     paths=['./duffing_train.pickle','./duffing_test.pickle'],
 )
 
@@ -42,7 +42,7 @@ model_config = EKFEstimatorConfig(
     obs_hidden_units=64,
     obs_layers=3,
     obs_nonlinearity=nn.Softplus(beta=2, threshold=20),
-    ramp_iters=20,
+    ramp_iters=200,
     burn_in=100,
     dkl_anneal_iter=1000,
     alpha=0.5,
@@ -69,4 +69,4 @@ exp_config = ExpConfig(
     learning_rate_function=lr1,
     gradient_clip_max_norm=500,
 )
-train(exp_config, deterministic=True, load=False)  # train the model
+train(exp_config, deterministic=True, load=True)  # train the model

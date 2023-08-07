@@ -141,7 +141,7 @@ def train(
     )
     vis_data = dataset.get_viz_data(buddy.device)  # type: ignore
     if load:
-        buddy.load_checkpoint(path="checkpoints/DynamicSystemDatasetConfig_EKFEstimatorConfig_Fri-11-32-10-0000000000384795.ckpt")
+        buddy.load_checkpoint(path="checkpoints/OfflineDatasetConfig_EKFEstimatorConfig_Fri-11-23-22-final.ckpt")
 
     # training loop
     iteration = 0

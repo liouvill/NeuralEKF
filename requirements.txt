@@ -1,0 +1,6 @@
+fannypack==0.0.25
+matplotlib==3.7.0
+numpy==1.23.5
+scikit_learn==1.2.1
+scipy==1.10.0
+torch==2.0.0

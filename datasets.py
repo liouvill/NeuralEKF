@@ -23,13 +23,9 @@ class VisData:
     y0: torch.Tensor
     y: torch.Tensor
     u: torch.Tensor
-    x: torch.Tensor
-    v: torch.Tensor
     np_t: np.ndarray
     np_y: np.ndarray
     np_u: np.ndarray
-    np_x: np.ndarray
-    np_v: np.ndarray
     plot_settings: PlotSettings
 
 
@@ -50,8 +46,6 @@ def _get_viz_data_basic(dataset, device: torch.device) -> VisData:
     t = torch.tensor(t_list, dtype=torch.float, device=device)[0, :]
     y = torch.tensor(x_list, dtype=torch.float, device=device).transpose(0, 1)
     u = torch.tensor(u_list, dtype=torch.float, device=device).transpose(0, 1)
-    x = y[...,[0,1]]
-    v = y[...,[0,1]]
     y = y[...,[0,1]]
 
     return VisData(
@@ -59,13 +53,9 @@ def _get_viz_data_basic(dataset, device: torch.device) -> VisData:
         y0=y[0],
         y=y,
         u=u,
-        x=x,
-        v=v,
         np_t=t.clone().cpu().numpy(),
         np_y=y.clone().cpu().numpy(),
         np_u=u.clone().cpu().numpy(),
-        np_x=x.clone().cpu().numpy(),
-        np_v=v.clone().cpu().numpy(),
         plot_settings=dataset.get_default_plot_settings(),
     )
 

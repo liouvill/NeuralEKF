@@ -173,7 +173,7 @@ class KalmanEstimatorCell(ODENet, ABC):
             The state.
         """
         obs = self._observation_dynamics(z)
-        #obs = torch.cat([obs1,obs2],-1)
+        #obs = z[...,:self._observation_dim]
         return obs
 
 

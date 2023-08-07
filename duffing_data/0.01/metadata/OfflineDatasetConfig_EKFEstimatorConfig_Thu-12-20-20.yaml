@@ -1,0 +1,78 @@
+!!python/object:experiments.ExpConfig
+base_learning_rate: 0.003
+batch_size: 200
+const_var: false
+epochs: 20000
+git_commit_hash: null
+gradient_clip_max_norm: 500
+learning_rate_function: !!python/name:__main__.lr1 ''
+log_iterations_images: 100
+log_iterations_simple: 100
+model: !!python/object:networks.ekf.EKFEstimatorConfig
+  alpha: 0.5
+  atol: 1.0e-09
+  beta: 1.0
+  burn_in: 100
+  ctrl_dim: 0
+  dataset: !!python/object:datasets.OfflineDatasetConfig
+    num_viz_trajectories: 1
+    paths:
+    - ./duffing_train.pickle
+    - ./duffing_test.pickle
+    traj_len: 51
+  dkl_anneal_iter: 1000
+  dyn_hidden_units: 64
+  dyn_layers: 3
+  dyn_nonlinearity: !!python/object:torch.nn.modules.activation.Softplus
+    _backward_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    _buffers: !!python/object/apply:collections.OrderedDict
+    - []
+    _forward_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    _forward_pre_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    _is_full_backward_hook: null
+    _load_state_dict_pre_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    _modules: !!python/object/apply:collections.OrderedDict
+    - []
+    _non_persistent_buffers_set: !!set {}
+    _parameters: !!python/object/apply:collections.OrderedDict
+    - []
+    _state_dict_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    beta: 2
+    threshold: 20
+    training: true
+  is_smooth: true
+  latent_dim: 4
+  obs_hidden_units: 64
+  obs_layers: 3
+  obs_nonlinearity: !!python/object:torch.nn.modules.activation.Softplus
+    _backward_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    _buffers: !!python/object/apply:collections.OrderedDict
+    - []
+    _forward_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    _forward_pre_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    _is_full_backward_hook: null
+    _load_state_dict_pre_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    _modules: !!python/object/apply:collections.OrderedDict
+    - []
+    _non_persistent_buffers_set: !!set {}
+    _parameters: !!python/object/apply:collections.OrderedDict
+    - []
+    _state_dict_hooks: !!python/object/apply:collections.OrderedDict
+    - []
+    beta: 2
+    threshold: 20
+    training: true
+  ramp_iters: 200
+  rtol: 1.0e-07
+  z_pred: false
+name: OfflineDatasetConfig_EKFEstimatorConfig_Thu-12-20-20
+ramp_iters: 200
