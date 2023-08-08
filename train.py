@@ -1,6 +1,5 @@
 from collections import namedtuple
 
-from fannypack.utils import pdb_safety_net
 from torch import nn as nn
 
 from datasets import (
@@ -13,7 +12,6 @@ from experiments import train
 
 model_config: KalmanEstimatorConfig
 exp_config: ExpConfig
-pdb_safety_net()
 
 
 # Configure hyper parameters
