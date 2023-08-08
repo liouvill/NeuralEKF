@@ -15,6 +15,7 @@ pip install -r requirements.txt
 
 ## Repository Overview
  * `duffing_data` - Simulated data and saved results for Duffing oscillators with observation noises 0.1, 0.01 and 0.001, repectively. The data and checkpoint in the root folder are for the 0.1 noise case, same as those in the subfolder `duffing_data/0.1`.
+ * `fannypack` - modified version of [fannypack](https://github.com/brentyi/fannypack) package for experiment management.
  * `networks` - Neural EKF model.
    * `core.py` - Key functions for the Neural EKF.
    * `ekf.py` - Functions for EKF computation.
